@@ -1,0 +1,23 @@
+a {
+    position: relative;
+    color: var(--headerColor);
+    text-decoration: none;
+    padding-bottom: .15em;
+    &:hover {
+        font-weight: 700;
+    }
+    &::after {
+        content: '';
+        bottom: 0;
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        background: var(--headerColor);
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    &:hover::after {
+        width: 100%;
+        left: 0;
+    }
+}

@@ -1,0 +1,28 @@
+h1,
+h2,
+h3 {
+    color: var(--headerColor);
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+p {
+    text-align: center;
+    font-size: .8rem;
+    color: var(--mainColor);
+    line-height: 1.75;
+    letter-spacing: 1px;
+    margin: 0;
+}

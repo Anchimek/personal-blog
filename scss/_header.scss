@@ -1,0 +1,50 @@
+@import './mixin';
+header {
+    grid-area: head;
+    .container {
+        @include setFlex(space-between);
+        flex-wrap: wrap;
+        background-color: var(--bgColor);
+        padding: 1em 8em;
+        transition: all .5s ease;
+        &.active {
+            z-index: 999;
+            padding: 0 8em;
+            background-color: var(--headerColor);
+            .main-title {
+                margin: 0;
+                color: var(--bgColor);
+            }
+            ul.nav  {
+                a {
+                    color: var(--bgColor);
+                    &:hover {
+                        font-weight: 700;
+                    }
+                }
+                a::after {
+                    background: var(--bgColor);
+                }
+            }
+        }
+        .main-title {
+            font-size: 2rem;
+        }
+        ul.nav  {
+            @include setFlex();
+            gap: 4em;
+            padding: 0;
+            height: 1rem;
+            li {
+                @include setFlex();
+                list-style-type: none;
+                min-width: 5rem;
+                text-align: center;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+} 
+    

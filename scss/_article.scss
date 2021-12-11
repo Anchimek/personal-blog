@@ -1,0 +1,122 @@
+main {
+    grid-area: main;
+    overflow: auto;
+    padding: 0 8em;
+    article {
+        @include setFlex(space-between);
+        position: relative;
+        padding: 3em 0;
+        border-bottom: 1px solid var(--mainColor);
+        &:last-child {
+            border: none;
+        }
+        .author {
+            position: absolute;
+            width: 1.5em;
+            height: 1.5em;
+            bottom: 3em;
+            color: var(--headerColor);
+            i {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            a::after {
+                width: 0;
+            }
+        }
+    }
+    article.main,
+    article.about {
+        img {
+            width: 45%;
+            height: .5rem;
+            object-fit: cover;
+            margin-right: 2em;
+        }
+        p {
+            padding: 3em;
+        }
+        .container-article {
+            @include setFlex();
+            height: 35rem;
+            background-color: var(--bgColor);
+            flex-direction: column;
+            padding: 0;
+            width: 50%;
+            gap: 2em;
+            transition: transform 1s ease;
+            transform: scale(.4);
+            h2 {
+                min-width: 0;
+                text-align: center;
+            }
+        }
+        &.about {
+            .author {
+                right: 0;
+            }
+            img {
+                margin-right: 0;
+            }
+        }
+    }  
+
+    article.recent {
+        @include setFlex(center, flex-start);
+        flex-direction: column;
+        gap: 8em;
+        padding: 5em 0;
+        section {
+            @include setFlex(flex-start, flex-start);
+            width: 100%;
+            .info {
+                position: relative;
+                height: 0;
+                opacity: 0;
+                width: 50%;
+                min-width: 25%;
+                transition: all .75s ease;
+                &.scroll {
+                    height: 10rem;
+                    opacity: 1;
+                    transition: all .75s ease;
+                }
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    min-width: 60%;
+                }
+                p {
+                    text-align: left;
+                }
+                .author {
+                    position: absolute;
+                    bottom: 0;
+                    color: var(--headerColor);
+                }
+            }
+            .content {
+                margin-left: 2em;
+                gap: 1em;
+                opacity: 0;
+                transform: scale(.2);
+                &.scroll {
+                    transform: scale(1);
+                    opacity: 1;
+                    transition: all 1s ease;
+                }
+                h3 {
+                    margin: 0 0 1em 0;
+                }
+                p {
+                    margin-bottom: 2.5em;
+                    text-align: left;
+                    line-height: 1.5;
+                }
+            }
+        }
+        
+    }
+}
