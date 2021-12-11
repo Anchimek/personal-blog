@@ -1,3 +1,3 @@
 # blog
 
-https://anchimek.github.io/blog/
+ https://anchimek.github.io/personal-blog/
